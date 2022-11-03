@@ -49,8 +49,8 @@ void GameEngine::Run()
 {
 	while (isRunning)
 	{
-		IM.Listen();
-		isRunning = !IM.GetQuitEvent();
+		IM->Listen();
+		isRunning = !IM->GetQuitEvent();
 		//Update();
 		Render();
 	}

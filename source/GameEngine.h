@@ -25,7 +25,6 @@ private:
 	void InitWindowAndRenderer();
 
 	//------ EVENTS
-	InputManager IM;
 
 	//----- RENDER
 	int RandomNum();
