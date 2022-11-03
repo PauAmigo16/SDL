@@ -5,6 +5,7 @@
 #include "GameObject.h"
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "SplashScreenScene.h"
 
 class GameEngine
 {
@@ -23,8 +24,6 @@ private:
 
 	void InitSDL();
 	void InitWindowAndRenderer();
-
-	//------ EVENTS
 
 	//----- RENDER
 	int RandomNum();

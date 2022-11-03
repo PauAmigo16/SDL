@@ -14,6 +14,8 @@ void GameEngine::Init()
 	InitWindowAndRenderer();
 
 	logo.LoadTexture(renderer, "resources/logo.png");
+
+
 }
 
 //Ensures that SDL is working and can run
@@ -47,11 +49,18 @@ void GameEngine::InitWindowAndRenderer()
 //Game loop
 void GameEngine::Run()
 {
+	//BEFORE THE GAME LOOP
+	SplashScreenScene* s3 = new SplashScreenScene();
+	SM->AddScene("Splash Screen", s3);
+	SM->SetScene("Splash Screen");
+	//GAME LOOP
 	while (isRunning)
 	{
 		IM->Listen();
 		isRunning = !IM->GetQuitEvent();
-		//Update();
+		SM->GetCurrentScene()->Update(0.0f);
+		SM->GetCurrentScene()->Render();
+		//We keep this so we have a visual thingy
 		Render();
 	}
 }
