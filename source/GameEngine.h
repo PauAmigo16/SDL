@@ -6,6 +6,7 @@
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "SplashScreenScene.h"
+#include "MainMenuScene.h"
 
 class GameEngine
 {

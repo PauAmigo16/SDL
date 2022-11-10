@@ -50,8 +50,8 @@ void GameEngine::InitWindowAndRenderer()
 void GameEngine::Run()
 {
 	//BEFORE THE GAME LOOP
-	SplashScreenScene* s3 = new SplashScreenScene();
-	SM->AddScene("Splash Screen", s3);
+	SM->AddScene("Splash Screen", new SplashScreenScene());
+	SM->AddScene("Main Menu", new MainMenuScene());
 	SM->SetScene("Splash Screen");
 	//GAME LOOP
 	while (isRunning)
@@ -59,9 +59,14 @@ void GameEngine::Run()
 		IM->Listen();
 		isRunning = !IM->GetQuitEvent();
 		SM->GetCurrentScene()->Update(0.0f);
-		SM->GetCurrentScene()->Render();
-		//We keep this so we have a visual thingy
-		Render();
+
+		//RENDER
+		//Set the clear color for renderer
+		SDL_SetRenderDrawColor(renderer, 1, 1, 1, 255);
+		//Render the background
+		SDL_RenderClear(renderer);
+		SM->GetCurrentScene()->Render(renderer);
+		SDL_RenderPresent(renderer);
 	}
 }
 
@@ -69,23 +74,6 @@ int GameEngine::RandomNum()
 {
 	int num = rand() % 255;
 	return num;
-}
-
-void GameEngine::Render()
-{
-	
-	//Set the clear color for renderer
-	SDL_SetRenderDrawColor(renderer, 1,1, 1, 255);
-
-	//Render the background
-	SDL_RenderClear(renderer);
-
-	//GameObjects
-	SDL_RenderCopy(renderer, logo.texture, &logo.sourceRect, &logo.destinationRect);
-
-	//UI
-
-	SDL_RenderPresent(renderer);
 }
 
 #pragma endregion RENDER

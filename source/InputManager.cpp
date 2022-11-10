@@ -20,15 +20,13 @@ void InputManager::Listen()
         {
             i->second = PRESSED;
         }
-        else if ((i->second & DOWN) > 0)
+        else if ((i->second & UP) > 0)
         {
             i->second = RELEASED;
         }
     }
 
-    //SDL_GetMouseState(&mouseX, &mouseY);
-
-
+    SDL_GetMouseState(&mouseX, &mouseY);
 
     SDL_Event evt;
 
@@ -46,7 +44,7 @@ void InputManager::Listen()
     }
 }
 
-//Returns tru if the key is in the give state
+//Returns true if the key is in the give state
 bool InputManager::CheckKeyState(Sint32 key, KeyState state)
 {
     if (keys.find(key) != keys.end())

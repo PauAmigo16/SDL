@@ -3,10 +3,10 @@
 void SplashScreenScene::Update(float dt)
 {
 	if (IM->CheckKeyState(SDLK_SPACE, PRESSED))
-		SM->SetScene("MainMenu");
+		SM->SetScene("Main Menu");
 }
 
-void SplashScreenScene::Render()
+void SplashScreenScene::Render(SDL_Renderer* r)
 {
 }
 

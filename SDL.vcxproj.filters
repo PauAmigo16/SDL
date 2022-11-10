@@ -33,7 +33,10 @@
     <ClCompile Include="source\SplashScreenScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\MenuScene.cpp">
+    <ClCompile Include="source\MainMenuScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UIText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +59,10 @@
     <ClInclude Include="source\SplashScreenScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\MenuScene.h">
+    <ClInclude Include="source\MainMenuScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UIText.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
