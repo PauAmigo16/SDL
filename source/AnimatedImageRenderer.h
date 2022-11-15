@@ -15,6 +15,6 @@ public:
 
     void Load(std::string path) override;
     void Update() override;
-    void Render() override
+    void Render() override;
 };
 
