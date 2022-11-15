@@ -54,7 +54,7 @@
     <ClCompile Include="source\ImageRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AnimatedImageRenderer.cpp">
+    <ClCompile Include="source\AnimatedImageRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

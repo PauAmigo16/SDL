@@ -10,7 +10,10 @@ private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
-	RenderManager(int width, int height, int flags);
+	RenderManager(int width, int height, int flags)
+	{
+		SDL_CreateWindowAndRenderer(width, height, flags, &window, &renderer);
+	}
 
 public:
 	static const float windowWidth;
