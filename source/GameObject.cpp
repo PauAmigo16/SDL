@@ -22,3 +22,8 @@ void GameObject::SetPosition(int x, int y)
 	destinationRect.x = x;
 	destinationRect.y = y;
 }
+
+Renderer* GameObject::GetRenderer()
+{
+	return &renderer.back();
+}
