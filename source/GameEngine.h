@@ -7,6 +7,7 @@
 #include "SceneManager.h"
 #include "SplashScreenScene.h"
 #include "MainMenuScene.h"
+#include "RenderManager.h"
 
 class GameEngine
 {
@@ -20,8 +21,6 @@ private:
 
 	int windowWidth;
 	int windowHeight;
-
-	GameObject logo;
 
 	void InitSDL();
 	void InitWindowAndRenderer();

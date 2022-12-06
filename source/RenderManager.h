@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL.h>
+#include <vector>
+#include "Object.h"
 
 #define RM RenderManager::GetInstance()
 
@@ -19,7 +21,9 @@ public:
 	static const float windowWidth;
 	static const float windowHeight;
 
-	RenderManager* GetInstance();
+	static RenderManager* GetInstance();
 	SDL_Renderer* GetRenderer();
+
+	void LoadTextures(std::vector<Object> Objects);
 };
 

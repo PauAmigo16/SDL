@@ -13,8 +13,12 @@ private:
 
     Food* food;
 
+    std::string path;
+
+    
+
 public:
-    Frog();
+    Frog(std::string path) : path(path) {};
 
     void Respawn();
     void AddMovement(Vector2 dir);

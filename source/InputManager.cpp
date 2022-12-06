@@ -7,6 +7,7 @@ InputManager* InputManager::GetInstance()
 {
     if (instance == nullptr)
         instance= new InputManager();
+
     return instance;
 }
 
