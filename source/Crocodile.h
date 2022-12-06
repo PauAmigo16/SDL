@@ -11,10 +11,16 @@ private:
 
     bool mouthOpen;
 
+    std::string bodyPath;
+    std::string openMouthPath;
+    std::string closedMouthPath;
+
 public:
-    Crocodile(float openMouthDuration, float closedMouthDuration, int length) : Log(length) {
-        this->openMouthDuration = openMouthDuration;
-        this->closedMouthDuration = closedMouthDuration;
+    Crocodile(float openMouthDuration, float closedMouthDuration, int length) : Log(length), openMouthDuration(openMouthDuration), closedMouthDuration(closedMouthDuration) 
+    {
+        bodyPath = "../resources/CrocBody.png";
+        openMouthPath = "../resources/CrocOpenMouth.png";
+        closedMouthPath = "../resources/CrocClosedMouth.png";
     }
 
     bool isMouthOpen();
@@ -22,4 +28,3 @@ public:
     void Update() override;
     void Render() override;
 };
-

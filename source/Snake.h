@@ -8,8 +8,13 @@ class Snake :
 private:
     Log* log;
 
+    std::string path;
+
 public:
-    Snake(Log* log):log(log){}
+    Snake(Log* log):log(log)
+    {
+        path = "../resources/SnakeAnimation.png";
+    }
 
     void Update() override;
     void Render() override;

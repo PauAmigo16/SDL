@@ -11,11 +11,12 @@ private:
 
     bool isDiving;
 
+    std::string path;
+
 public:
-    DivingTurtles(float diveDuration, float surfaceDuration, int length) :Turtles(length)
+    DivingTurtles(float diveDuration, float surfaceDuration, int length) :Turtles(length), diveDuration(diveDuration), surfaceDuration(surfaceDuration)
     {
-        this->diveDuration = diveDuration;
-        this->surfaceDuration = surfaceDuration;
+        path = "../resources/DivingTurtleAnimation.png";
     }
 
     void Update() override;

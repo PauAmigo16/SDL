@@ -6,6 +6,7 @@ class Frog :
     public GameObject
 {
 private:
+    Vector2 position;
     Vector2 targetPos;
 
     bool moving;
@@ -15,10 +16,8 @@ private:
 
     std::string path;
 
-    
-
 public:
-    Frog(std::string path) : path(path) {};
+    Frog();
 
     void Respawn();
     void AddMovement(Vector2 dir);

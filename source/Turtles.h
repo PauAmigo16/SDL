@@ -2,15 +2,20 @@
 #include "GameObject.h"
 
 class Turtles :
-    public GameObject
+	public GameObject
 {
 private:
-    int length;
+	int length;
+
+	std::string path;
 
 public:
-    Turtles(int length) : length(length){}
+	Turtles(int length) : length(length)
+	{
+		path = "../resources/Turtle.png";
+	}
 
-    virtual void Update() override;
-    virtual void Render() override;
+	virtual void Update() override;
+	virtual void Render() override;
 };
 

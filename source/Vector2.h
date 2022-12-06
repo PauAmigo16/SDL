@@ -12,29 +12,29 @@ public:
 
 	void Normalize();
 
-	static Vector2 operator+ (Vector2 a, Vector2 b)
+	Vector2 operator + (Vector2 a)
 	{
-		return Vector2(a.x + b.x, a.y + b.y);
+		return Vector2(a.x + x, a.y + y);
 	}
-	static Vector2 operator- (Vector2 a, Vector2 b)
+	 Vector2 operator - (Vector2 a)
 	{
-		return Vector2(a.x - b.x, a.y - b.y);
+		return Vector2(a.x - x, a.y - y);
 	}
-	static Vector2 operator* (Vector2 a, float scale)
+	Vector2 operator * (float scale)
 	{
-		return Vector2(a.x * scale, a.y * scale);
+		return Vector2(x * scale, y * scale);
 	}
-	static Vector2 operator/ (Vector2 a, float scale)
+	Vector2 operator / (float scale)
 	{
-		return Vector2(a.x / scale, a.y / scale);
+		return Vector2(x / scale, y / scale);
 	}
-	static bool operator== (Vector2 a, Vector2 b)
+	bool operator== (Vector2 a)
 	{
-		return (a.x == b.x && a.y == b.y);
+		return (a.x == x && a.y == y);
 	}
-	static bool operator!= (Vector2 a, Vector2 b)
+	bool operator != (Vector2 a)
 	{
-		return !(a.x == b.x && a.y == b.y);
+		return !(a.x == x && a.y == y);
 	}
 };
 
