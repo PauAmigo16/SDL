@@ -11,11 +11,9 @@ private:
     std::string path;
 
 public:
-    Snake(Log* log):log(log)
-    {
-        path = "../resources/SnakeAnimation.png";
-    }
+    Snake(Log* log);
 
+    void Load() override;
     void Update() override;
     void Render() override;
 };

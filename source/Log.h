@@ -7,19 +7,15 @@ class Log :
 private:
 	int length;
 
-	std::string endLog;
-	std::string midLog;
-	std::string startLog;
+	std::string startLogPath;
+	std::string midLogPath;
+	std::string endLogPath;
 
 public:
-	Log(int length) :length(length) 
-	{
-		endLog = "../resources/LogEnd.png";
-		midLog = "../resources/LogMiddle.png";
-		startLog = "../resources/LogStart.png";
-	}
+	Log(int length);
 
-	void Update()override;
-	void Render()override;
+	void Load() override;
+	void Update() override;
+	void Render() override;
 };
 

@@ -20,10 +20,10 @@ Car::Car(CarType type)
 		path = "../resources/Car4.png";
 		break;
 	}
+	renderers.push_back(ImageRenderer());
 }
 
 void Car::Load()
 {
-	for (auto renderer : renderers)
-		renderer.Load(path);
+		renderers[0].Load(path);
 }

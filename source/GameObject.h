@@ -5,6 +5,7 @@
 #include <vector>
 #include "Object.h"
 #include "ImageRenderer.h"
+#include "AnimatedImageRenderer.h"
 #include "Renderer.h"
 
 class GameObject : public Object

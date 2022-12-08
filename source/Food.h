@@ -14,11 +14,9 @@ private:
     
 public:
 
-    Food(Log* log) : log(log)
-    {
-        path = "../resources/Food.png";
-    }
+    Food(Log* log);
 
+    void Load() override;
     void Update() override;
     void Render() override;
 

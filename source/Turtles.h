@@ -10,11 +10,9 @@ private:
 	std::string path;
 
 public:
-	Turtles(int length) : length(length)
-	{
-		path = "../resources/Turtle.png";
-	}
+	Turtles(int length);
 
+	virtual void Load() override;
 	virtual void Update() override;
 	virtual void Render() override;
 };

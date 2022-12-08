@@ -21,6 +21,7 @@ public:
 
     void Respawn();
     void AddMovement(Vector2 dir);
+    void Load();
     void Update() override;
     void Render() override;
     void AddFood(Food* food);
