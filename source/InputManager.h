@@ -27,6 +27,9 @@ private:
     int mouseX, mouseY;
 
     bool quitEvent;
+    bool resizeEvent;
+
+    SDL_Event lastWindEvent;
 
 public:
     static InputManager* GetInstance();
@@ -38,5 +41,6 @@ public:
 
     bool CheckKeyState(Sint32 key, KeyState state);
     bool GetQuitEvent();
+    bool GetResizeEvent(int& newWidth, int& newHeight);
 
 };

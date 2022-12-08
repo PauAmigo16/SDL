@@ -8,10 +8,10 @@ class Car :
 {
 private:
 	std::string path;
-
 public:
 	Car(CarType	type);
 
+	void Load() override;
 	void Update() override;
 	void Render() override;
 };

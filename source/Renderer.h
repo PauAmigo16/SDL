@@ -2,6 +2,7 @@
 #include <SDL_image.h>
 #include <string>
 #include "Vector2.h"
+#include "RenderManager.h"
 
 class Renderer
 {
@@ -13,11 +14,13 @@ protected:
 
 	Vector2 scale;
 
-	float alpha;
+	int alpha;
+
 	float rotation;
 
 public:
-	Renderer(SDL_Color color, float alpha, float rotation, SDL_Rect sourceRect, SDL_Rect targetRect) : color(color), alpha(alpha), rotation(rotation), sourceRect(sourceRect), targetRect(targetRect) 
+	Renderer(SDL_Color color, float alpha, float rotation, SDL_Rect sourceRect, SDL_Rect targetRect) 
+		: color(color), alpha(alpha), rotation(rotation), sourceRect(sourceRect), targetRect(targetRect) 
 	{
 
 	}

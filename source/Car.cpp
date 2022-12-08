@@ -21,3 +21,9 @@ Car::Car(CarType type)
 		break;
 	}
 }
+
+void Car::Load()
+{
+	for (auto renderer : renderers)
+		renderer.Load(path);
+}

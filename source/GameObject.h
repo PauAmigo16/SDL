@@ -10,16 +10,14 @@
 class GameObject : public Object
 {
 protected:
-	std::vector<ImageRenderer> renderer;
+	std::vector<ImageRenderer> renderers;
 
 public:
 	GameObject() = default;
 
-	void LoadTexture(SDL_Renderer* renderer);
-	void SetPosition(int x, int y);
-
+	virtual void Load() override=0;
 	virtual void Update() override = 0;
 	virtual void Render() override = 0;
 
-	Renderer* GetRenderer();
+	std::vector<ImageRenderer> GetRenderers();
 };

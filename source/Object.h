@@ -5,7 +5,7 @@
 
 class Object
 {
-private:
+protected:
 	Transform transform;
 	AABB boundingBox;
 	Vector2 velocity;
@@ -15,6 +15,7 @@ public:
 
 	virtual void Update() = 0;
 	virtual void Render() = 0;
+	virtual void Load() = 0;
 
 	Transform GetTransform();
 	AABB GetBoundingBox();
