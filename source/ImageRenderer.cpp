@@ -2,6 +2,7 @@
 
 void ImageRenderer::Load(std::string path)
 {
+	SDL_Init(SDL_INIT_EVERYTHING);
 	//Load the texture
 	SDL_Surface* surface = IMG_Load(path.c_str());
 	texture = SDL_CreateTextureFromSurface(RM->GetRenderer(), surface); 
@@ -15,4 +16,14 @@ void ImageRenderer::Load(std::string path)
 	//Update the destination rect
 	targetRect.w = sourceRect.w;
 	targetRect.h = sourceRect.h;
+}
+
+void ImageRenderer::Update()
+{
+
+}
+
+void ImageRenderer::Render()
+{
+	
 }
