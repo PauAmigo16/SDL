@@ -16,3 +16,10 @@ void ImageRenderer::Load(std::string path)
 	targetRect.w = sourceRect.w;
 	targetRect.h = sourceRect.h;
 }
+
+
+
+void ImageRenderer::Render()
+{
+	SDL_RenderCopy(RM->GetRenderer(), texture, NULL, &targetRect);
+}
