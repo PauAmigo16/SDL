@@ -6,6 +6,9 @@ void ImageRenderer::Load(std::string path)
 	SDL_Surface* surface = IMG_Load(path.c_str());
 	texture = SDL_CreateTextureFromSurface(RM->GetRenderer(), surface); 
 
+	if (surface!=nullptr)
+		throw SDL_GetError();
+
 	//Process the texture
 	SDL_QueryTexture(texture, nullptr, nullptr, &sourceRect.w, &sourceRect.h);
 

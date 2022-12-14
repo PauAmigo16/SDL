@@ -13,7 +13,7 @@ private:
     int frameHeight;
 
     int frames;
-    int currentFrame;
+    int currentFrame=0;
     int fps;
 
     float currentFrameTime=0.0f;
