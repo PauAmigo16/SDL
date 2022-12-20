@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-std::vector<ImageRenderer> GameObject::GetRenderers()
+std::vector<Renderer> GameObject::GetRenderers()
 {
 	return renderers;
 }

@@ -2,9 +2,9 @@
 #include "Scene.h"
 #include "Spawner.h"
 #include "Frog.h"
-
 #include <string>
 #include <vector>
+
 class GameplayScene :
     public Scene
 {
@@ -17,9 +17,9 @@ public:
     static int level;
     int score;
 
-    Spawner spawner;
+    std::vector<Spawner<GameObject*>*> spawners;
     Frog player;
-    std::vector<GameObject> tiles;
+    std::vector<GameObject*> tiles;
 
     GameplayScene() = default;
     void OnEnter() override;

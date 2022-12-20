@@ -15,10 +15,9 @@ SDL_Renderer* RenderManager::GetRenderer()
     return renderer;
 }
 
-void RenderManager::LoadTextures(std::vector<Object> Objects)
+void RenderManager::LoadTextures(Scene* scene)
 {
-    for (auto gO : Objects)
-        gO.Load();
+    scene->Load();
 }
 
 void RenderManager::RenderScreen()

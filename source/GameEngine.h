@@ -29,8 +29,6 @@ private:
 	int RandomNum();
 	void Render();
 
-
-
 public:
 	GameEngine(int x, int y);
 

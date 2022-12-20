@@ -1,7 +1,10 @@
 #pragma once
 #include <map>
 #include <string>
-#include "Scene.h"
+#include "GameplayScene.h"
+#include "MainMenuScene.h"
+#include "RankingScene.h"
+#include "SplashScreenScene.h"
 #include <assert.h>
 
 #define SM SceneManager::GetInstance() // va a hacer que cada vez que escribamos SM es como escribir la funcion

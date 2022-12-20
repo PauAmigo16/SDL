@@ -28,7 +28,7 @@ public:
 	static RenderManager* GetInstance();
 	SDL_Renderer* GetRenderer();
 
-	void LoadTextures(std::vector<Object> Objects);
+	void LoadTextures(Scene*);
 	void RenderScreen();
 };
 

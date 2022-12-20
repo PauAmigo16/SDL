@@ -1,6 +1,6 @@
 #include "DivingTurtles.h"
 
-bool DivingTurtles::isDiving()
+bool DivingTurtles::IsDiving()
 {
     return isDiving;
 }

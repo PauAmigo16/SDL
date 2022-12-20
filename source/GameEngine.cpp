@@ -13,7 +13,7 @@ void GameEngine::Init()
 	InitSDL();
 	InitWindowAndRenderer();
 
-	RM->LoadTextures();
+	RM->LoadTextures(SM->GetScene("Gameplay"));
 
 }
 
@@ -49,9 +49,8 @@ void GameEngine::InitWindowAndRenderer()
 void GameEngine::Run()
 {
 	//BEFORE THE GAME LOOP
-	SM->AddScene("Splash Screen", new SplashScreenScene());
-	SM->AddScene("Main Menu", new MainMenuScene());
 	SM->SetScene("Splash Screen");
+
 	//GAME LOOP
 	while (isRunning)
 	{

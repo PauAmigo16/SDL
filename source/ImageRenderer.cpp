@@ -2,7 +2,6 @@
 
 void ImageRenderer::Load(std::string path)
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
 	//Load the texture
 	SDL_Surface* surface = IMG_Load(path.c_str());
 	texture = SDL_CreateTextureFromSurface(RM->GetRenderer(), surface); 

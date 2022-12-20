@@ -1,7 +1,8 @@
 #pragma once
 #include "Vector2.h"
 
-template <template ObjectType>
+template <typename T>
+
 class Spawner
 {
 private:
@@ -13,8 +14,8 @@ private:
 	Vector2 startVelocity;
 
 public:
-	Spawner<ObjectType>();
+	Spawner<T>()=default;
 
-	ObjectType Update();
+	T* Update(float dt);
 };
 

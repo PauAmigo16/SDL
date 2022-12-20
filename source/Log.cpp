@@ -19,3 +19,11 @@ void Log::Load()
 	for (int i = 1; i < length - 1; i++)
 		renderers[1].Load(midLogPath);
 }
+
+void Log::Update()
+{
+}
+
+void Log::Render()
+{
+}

@@ -4,14 +4,13 @@
 #include <SDL_image.h>
 #include <vector>
 #include "Object.h"
-#include "ImageRenderer.h"
 #include "AnimatedImageRenderer.h"
-#include "Renderer.h"
+#include <vector>
 
 class GameObject : public Object
 {
 protected:
-	std::vector<ImageRenderer> renderers;
+	std::vector<Renderer> renderers;
 
 public:
 	GameObject() = default;
@@ -20,5 +19,5 @@ public:
 	virtual void Update() override = 0;
 	virtual void Render() override = 0;
 
-	std::vector<ImageRenderer> GetRenderers();
+	std::vector<Renderer> GetRenderers();
 };

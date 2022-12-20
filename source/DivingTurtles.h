@@ -22,6 +22,6 @@ public:
     void Update() override;
     void Render() override;
 
-    bool isDiving();
+    bool IsDiving();
 };
 
