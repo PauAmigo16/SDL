@@ -13,8 +13,7 @@ void GameEngine::Init()
 	InitSDL();
 	InitWindowAndRenderer();
 
-	logo.LoadTexture(renderer, "resources/logo.png");
-
+	RM->LoadTextures();
 
 }
 
@@ -24,9 +23,8 @@ void GameEngine::InitSDL()
 	//Load SDL and check if it is correct
 	int result = SDL_Init(SDL_INIT_VIDEO);
 
-	srand(time(NULL));
-
 	bool success = result >= 0;
+
 	if (!success)
 		throw SDL_GetError();
 }
@@ -37,6 +35,7 @@ void GameEngine::InitWindowAndRenderer()
 	int result = SDL_CreateWindowAndRenderer(windowWidth, windowHeight, SDL_WINDOW_SHOWN, &window, &renderer);
 	
 	bool success = result >= 0;
+
 	if (!success)
 		throw SDL_GetError();
 }
@@ -60,13 +59,7 @@ void GameEngine::Run()
 		isRunning = !IM->GetQuitEvent();
 		SM->GetCurrentScene()->Update(0.0f);
 
-		//RENDER
-		//Set the clear color for renderer
-		SDL_SetRenderDrawColor(renderer, 1, 1, 1, 255);
-		//Render the background
-		SDL_RenderClear(renderer);
-		SM->GetCurrentScene()->Render(renderer);
-		SDL_RenderPresent(renderer);
+		RM->RenderScreen();
 	}
 }
 

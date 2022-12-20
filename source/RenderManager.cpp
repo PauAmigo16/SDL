@@ -14,3 +14,21 @@ SDL_Renderer* RenderManager::GetRenderer()
 {
     return renderer;
 }
+
+void RenderManager::LoadTextures(std::vector<Object> Objects)
+{
+    for (auto gO : Objects)
+        gO.Load();
+}
+
+void RenderManager::RenderScreen()
+{
+
+    IM->GetResizeEvent(currentWinWidth, currentWinHeight);
+    //Set the clear color for renderer
+    SDL_SetRenderDrawColor(renderer, 1, 1, 1, 255);
+    //Render the background
+    SDL_RenderClear(renderer);
+    SM->GetCurrentScene()->Render(renderer);
+    SDL_RenderPresent(renderer);
+}

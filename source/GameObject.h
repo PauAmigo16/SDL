@@ -2,17 +2,23 @@
 #include <SDL.h>
 #include <string>
 #include <SDL_image.h>
+#include <vector>
+#include "Object.h"
+#include "ImageRenderer.h"
+#include "AnimatedImageRenderer.h"
+#include "Renderer.h"
 
-class GameObject
+class GameObject : public Object
 {
-public:
-	SDL_Texture* texture;
-	SDL_Rect destinationRect;
-	SDL_Rect sourceRect;
+protected:
+	std::vector<ImageRenderer> renderers;
 
+public:
 	GameObject() = default;
 
-	void LoadTexture(SDL_Renderer* renderer, std::string path);
-	void SetPosition(int x, int y);
+	virtual void Load() override=0;
+	virtual void Update() override = 0;
+	virtual void Render() override = 0;
 
+	std::vector<ImageRenderer> GetRenderers();
 };

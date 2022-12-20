@@ -7,6 +7,7 @@ InputManager* InputManager::GetInstance()
 {
     if (instance == nullptr)
         instance= new InputManager();
+
     return instance;
 }
 
@@ -32,8 +33,15 @@ void InputManager::Listen()
 
     while (SDL_PollEvent(&evt)) {
 
+        resizeEvent = false;
+
         if (evt.type == SDL_QUIT) {
             quitEvent = true;
+        }
+        else if (evt.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) 
+        {
+            resizeEvent = true;
+            lastWindEvent = evt;
         }
         else if (evt.type == SDL_KEYDOWN) {
             keys[evt.key.keysym.sym] = (KeyState)(DOWN | PRESSED);
@@ -72,4 +80,11 @@ int InputManager::GetMouseY()
 bool InputManager::GetQuitEvent()
 {
     return quitEvent;
+}
+
+bool InputManager::GetResizeEvent(int& newWidth, int& newHeight)
+{
+    newWidth = lastWindEvent.window.data1;
+    newHeight = lastWindEvent.window.data2;
+    return resizeEvent;
 }

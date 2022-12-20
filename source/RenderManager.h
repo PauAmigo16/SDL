@@ -1,5 +1,9 @@
 #pragma once
 #include <SDL.h>
+#include <vector>
+#include "Object.h"
+#include "SceneManager.h"
+#include "InputManager.h"
 
 #define RM RenderManager::GetInstance()
 
@@ -10,16 +14,21 @@ private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
+	static const int windowWidth=224;
+	static const int windowHeight =240;
+
 	RenderManager(int width, int height, int flags)
 	{
 		SDL_CreateWindowAndRenderer(width, height, flags, &window, &renderer);
 	}
-
 public:
-	static const float windowWidth;
-	static const float windowHeight;
+	int currentWinWidth;
+	int currentWinHeight;
 
-	RenderManager* GetInstance();
+	static RenderManager* GetInstance();
 	SDL_Renderer* GetRenderer();
+
+	void LoadTextures(std::vector<Object> Objects);
+	void RenderScreen();
 };
 
